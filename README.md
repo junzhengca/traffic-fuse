@@ -12,4 +12,8 @@ Create a system crontab to run the script every 5 minutes, replace `eth0` with y
 sudo echo "*/5 * * * * root /path/to/fuse.sh eth0 1000000000" > /etc/cron.d/traffic-fuse
 ```
 
-You are done, the system will not shutdown if the traffic usage is above the threshold you set for the 5 minute interval.
+You are done, the system will now shutdown if the traffic usage is above the threshold you set for the 5 minute interval. In this case, 1GB.
+
+## Notes
+
+We compute both RX and TX traffic, so both download and upload traffic will be considered.
